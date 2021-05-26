@@ -1,0 +1,15 @@
+---
+- name: java application installation
+  hosts: all
+  roles:
+    - java
+
+- name: tomcat installation
+  hosts: all
+  roles:
+    - tomcat
+
+- name: git installation
+  hosts: all
+  roles:
+    - git

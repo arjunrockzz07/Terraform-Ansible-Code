@@ -1,0 +1,16 @@
+---
+- name: download Maven server packages
+  get_url:
+    url: https://apachemirror.wuchna.com/maven/maven-3/3.8.1/binaries/apache-maven-3.8.1-bin.tar.gz
+    dest: /home/ec2-user/		
+
+- name: extract maven packages
+  unarchive:
+    src: /home/ec2-user/apache-maven-3.8.1-bin.tar.gz
+    dest: /home/ec2-user/
+    remote_src: yes
+
+- name: install maven
+  yum:
+    name: maven
+    state: present

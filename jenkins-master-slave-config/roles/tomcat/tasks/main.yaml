@@ -1,0 +1,27 @@
+---
+- name: download tomcat server packages
+  get_url:
+    url: https://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.66/bin/apache-tomcat-8.5.66.tar.gz
+    dest: /home/ec2-user/
+- name: extract tomcat packages
+  unarchive:
+    src: /home/ec2-user/apache-tomcat-8.5.66.tar.gz
+    dest: /home/ec2-user/
+    remote_src: yes
+
+- name: copying server.xml file
+  template:
+    src: server.xml
+    dest: /home/ec2-user/apache-tomcat-8.5.66/conf
+
+- name: copying context.xml file
+  template:
+    src: context.xml
+    dest: /home/ec2-user/apache-tomcat-8.5.66/webapps/manager/META-INF/
+
+- name: copying tomcat-users.xml file
+  template:
+    src: tomcat-users.xml
+    dest: /home/ec2-user/apache-tomcat-8.5.66/conf
+- name: "Starting Apache server"
+  command: nohup /home/ec2-user/apache-tomcat-8.5.66/bin/startup.sh
