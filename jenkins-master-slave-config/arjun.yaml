@@ -3,23 +3,7 @@
   hosts: all
   roles:
     - java
-
-- name: jenkins installation
-  hosts: all
-  roles:
     - jenkins
-
-
-- name: maven installation
-  hosts: all
-  roles:
     - maven
-- name: ansible installation
-  hosts: all
-  roles:
     - ansible
-
-- name: git installation
-  hosts: all
-  roles:
     - git

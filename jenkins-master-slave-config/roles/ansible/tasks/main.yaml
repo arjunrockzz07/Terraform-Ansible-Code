@@ -1,8 +1,0 @@
----
-- name: Installing dependencies
-  command: amazon-linux-extras install epel -y
-
-- name: Installing ansible
-  yum:
-    name: ansible
-    state: present
