@@ -1,15 +1,7 @@
 ---
-- name: java application installation
+- name: Slave Server setup
   hosts: all
   roles:
     - java
-
-- name: tomcat installation
-  hosts: all
-  roles:
     - tomcat
-
-- name: git installation
-  hosts: all
-  roles:
     - git

@@ -30,7 +30,7 @@
 
  provisioner "local-exec" {
       command = ">>myhosts;sleep 60; echo ${self.public_ip} >> myhosts;ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i myhosts ${lookup(var.playbookname,var.env)}"
-  }
+	  }
 
 }
 
